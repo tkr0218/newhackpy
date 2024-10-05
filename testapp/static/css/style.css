@@ -1,0 +1,48 @@
+img {
+    height: 300px;
+    object-fit: cover;
+    margin: auto;
+    display: block;
+  }
+p.zairyou:before{
+    content: '・';
+    margin-right: 5px;
+}
+p.make:before{
+    content: '1.';
+    margin-right: 5px;
+}
+#container {
+    background-color: #ffffff;
+    width: 300px;
+    border-radius: 1rem;
+    padding: 0;
+  }
+  
+  #time {
+    color: #1e90ff;
+    font-size: 20px;
+    text-align: center;
+    padding: 1px;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0,139,253,0.25);
+    margin: .5rem;
+  }
+  
+  #buttons {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  #start, #stop, #reset {
+    font-size: 15px;
+    border-radius: .3rem;
+    box-shadow: 0 0 20px rgba(77, 78, 79, 0.25);
+  }
+
+img {
+    height: 300px;
+    object-fit: cover;
+    margin: auto;
+    display: block;
+  }
