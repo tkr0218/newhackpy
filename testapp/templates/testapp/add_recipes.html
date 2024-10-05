@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% block title %}<title>add_recipes</title>{% endblock %}
 
 {% block content %}  
 <div class="container">
@@ -13,9 +14,24 @@
         <li class="nav-item"><a href="recipes" class="nav-link">recipes</a></li>
         <li class="nav-item"><a href="/faq" class="nav-link">FAQs</a></li>
         <li class="nav-item"><a href="/contacts" class="nav-link">contacts</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link active" aria-current="page">About</a></li>
+        <li class="nav-item"><a href="/add_recipes" class="nav-link active" aria-current="page">add_recipes</a></li>
       </ul>
     </header>
+    <div class="container mt-4">
+      <h2>レシピの追加</h2>
+      <form action="/add_recipes" method="POST">
+          <label for="recipe">レシピ</label>
+          <input name="recipe"></input>
+  
+          <label for="times">時間</label>
+          <input name="times"></input>
+  
+          <label for="diff">難易度</label>
+          <input name="diff"></input>
+  
+
+  
+          <button type="submit" class="btn btn-primary">レシピ追加</button>
+      </form>
   </div>
-<p>工事中</p>
 {% endblock %}
