@@ -8,3 +8,5 @@ class recipe(db.Model):
     name = db.Column(db.String(255))  # 料理名
     times = db.Column(db.String(255))  # かかる時間
     diff = db.Column(db.String(255))
+    material= db.Column(db.String(512))
+    howto = db.Column(db.String(512))

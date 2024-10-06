@@ -2,6 +2,7 @@ from testapp import app
 from flask import render_template, request, redirect, url_for
 from testapp.models.recipes import recipe
 from testapp import db
+import pexpect
 """import requests
 import os
 class Image_DL():
@@ -21,9 +22,9 @@ class Image_DL():
 @app.route('/')
 def index():
     return render_template('testapp/index.html')
-@app.route('/recipes')
+"""@app.route('/recipes')
 def other1():
-    return render_template('testapp/index1.html')
+    return render_template('testapp/index1.html')"""
 @app.route('/faq')
 def other2():
     return render_template('testapp/faq.html')
@@ -38,12 +39,39 @@ def add_recipes():
         form_recipe = request.form.get('recipe')  # str
         form_times = request.form.get('times')
         form_diff = request.form.get('diff')
+        form_mat = request.form.get('mat')
+        form_howto = request.form.get('howto')
+
         reci = recipe(
             name=form_recipe,
             times=form_times,
             diff=form_diff,
+            material=form_mat,
+            howto=form_howto,
             #images=""
         )
         db.session.add(reci)
         db.session.commit()
-        return redirect(url_for("index"))
+        p = pexpect.spawn('./out')
+        p.sendline(form_recipe)
+        p.sendline(form_mat)
+        p.sendline("@end")
+        p.sendline(form_howto)
+        p.sendline("@end")
+        p.expect("\n", timeout=None)
+        p.close()
+        return redirect(url_for('add_recipes'))
+@app.route('/recipes')
+def employee_list():
+    reci = recipe.query.all()
+    return render_template('testapp/recipes.html', recipes=reci)
+@app.route('/recipes/<int:id>')
+def employee_detail(id):
+    reci = recipe.query.get(id)
+    return render_template("testapp/"+reci.name+".html", recipe=reci)
+@app.route('/recipes/<int:id>/delete', methods=['POST'])  
+def recipe_delete(id):  
+    employee = recipe.query.get(id)   
+    db.session.delete(employee)  
+    db.session.commit()  
+    return redirect(url_for('add_recipes'))

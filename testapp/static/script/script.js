@@ -2,6 +2,7 @@ const time = document.getElementById('time');
 const startButton = document.getElementById('start');
 const stopButton = document.getElementById('stop');
 const resetButton = document.getElementById('reset');
+const value=time.getAttribute('value')
 
 // 開始時間
 let startTime;
@@ -13,7 +14,6 @@ let timeoutID;
 // 時間を表示する関数
 function displayTime(time1) {
     const currentTime = new Date(time1-(Date.now() - startTime + stopTime));
-    console.log(time1)
     const m = String(currentTime.getMinutes()).padStart(2, '0');
     const s = String(currentTime.getSeconds()).padStart(2, '0');
 
@@ -27,7 +27,7 @@ startButton.addEventListener('click', () => {
     stopButton.disabled = false;
     resetButton.disabled = true;
     startTime = Date.now();
-    displayTime(1200000);
+    displayTime(Number(value)*60*1000);
 });
 
 // ストップボタンがクリックされたら時間を止める
