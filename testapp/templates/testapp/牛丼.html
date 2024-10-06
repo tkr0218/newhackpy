@@ -16,17 +16,25 @@
 		</ul>
 	</header>
 </div>
-		<h1>たまごやき</h1>
-		<img src="{ { url_for('static', filename = 'img/calbo.png') }}" alt="たまごやき">
+		<h1>牛丼</h1>
+		<img src="{ { url_for('static', filename = 'img/calbo.png') }}" alt="牛丼">
 		<p>材料</p>
-		<p class="zairyou">卵 1個</p>
-		<p class="zairyou">塩 少々</p>
+		<p class="zairyou">牛肉 ごはん</p>
 		<p>作り方</p>
 		<div class="recipe">
-		<p class="make">卵を溶く</p>
-		<p class="make">卵を焼く</p>
+		<p class="make">調味料を混ぜる</p>
+		<p class="make">牛肉を調味料と炒める</p>
 		<div id="container">
 			<div id="time" value="5" >時間を測るためにstartを押してね</div>
+			<div id="buttons">
+				<input id="start" type="button" value="start">
+				<input id="stop" type="button" value="stop">
+				<input id="reset" type="button" value="reset">
+			</div>
+		</div>
+		<p class="make">ご飯を炊く</p>
+		<div id="container">
+			<div id="time" value="50" >時間を測るためにstartを押してね</div>
 			<div id="buttons">
 				<input id="start" type="button" value="start">
 				<input id="stop" type="button" value="stop">

@@ -9,7 +9,7 @@ p.zairyou:before{
     margin-right: 5px;
 }
 p.make:before{
-    content: '1.';
+    content: '・';
     margin-right: 5px;
 }
 #container {
