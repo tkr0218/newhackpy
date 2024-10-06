@@ -1,0 +1,49 @@
+﻿{% extends "layout.html" %}
+{% block title %}<title>recipes</title>{% endblock %}
+{% block content %}
+<div class="container">
+	<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+		<a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+			<svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+			<span class="fs-4">レシピwithタイマー</span>
+		</a>
+		<ul class="nav nav-pills">
+			<li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">recipes</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">contacts</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">About</a></li>
+		</ul>
+	</header>
+</div>
+		<h1>ゆで卵</h1>
+		<img src="{ { url_for('static', filename = 'img/calbo.png') }}" alt="ゆで卵">
+		<p>材料</p>
+		<p class="zairyou">卵 1個</p>
+		<p class="zairyou">水 1L</p>
+		<p class="zairyou">塩 少々</p>
+		<p>作り方</p>
+		<div class="recipe">
+		<p class="make">水を強火にかけ沸騰まで6分ほど待つ</p>
+		<div id="container">
+			<div id="time" value="6" >時間を測るためにstartを押してね</div>
+			<div id="buttons">
+				<input id="start" type="button" value="start">
+				<input id="stop" type="button" value="stop">
+				<input id="reset" type="button" value="reset">
+			</div>
+		</div>
+		<p class="make">塩を加える</p>
+		<p class="make">卵を入れ5分待つ</p>
+		<div id="container">
+			<div id="time" value="5" >時間を測るためにstartを押してね</div>
+			<div id="buttons">
+				<input id="start" type="button" value="start">
+				<input id="stop" type="button" value="stop">
+				<input id="reset" type="button" value="reset">
+			</div>
+		</div>
+		<p class="make">取り出して殻をむく</p>
+		</div>
+		<p>完成!</p>
+{% endblock %}

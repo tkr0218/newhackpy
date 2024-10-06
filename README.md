@@ -1,0 +1,5 @@
+flask,flask_sqlalchemyなどのライブラリを入れて
+
+python server.py
+
+コマンドを打てば動くと思います
